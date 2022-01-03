@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<div class= "container-fluid ">
+<img class="d-block w-100 my-2" src="static/images/img5.jpeg" style="height: 500px;" alt="First slide">
+
+<h1 class="text-center"><b>Contact</b></h1>
+</div>
+
+<div class="container py-3">
+<form method="post" action="/contact">
+
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+    </div>
+    <div class="form-group">
+        <label for="emil">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-mail">
+      </div>
+      <div class="form-group">
+        <label for="Phone">Phone Number</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter the Number">
+      </div>
+    <div class="form-group">
+      <label for="desc">Example Textarea</label>
+      <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="Enter your Feedback here"></textarea>
+    </div>
+     <button class="btn btn-primary mb-4 ">Submmit</button>
+  </form>
+</div>
+{% endblock  %}%}
+
